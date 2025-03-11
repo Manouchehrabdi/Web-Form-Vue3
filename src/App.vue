@@ -1,23 +1,16 @@
 <template>
-  <h1 style="color: red">SignUp Welcome</h1>
+  <h1
+    class="text-blue-600/100 dark:text-sky-400/100 text-center font-bold text-2xl mt-6"
+  >
+    SignUp Welcome
+  </h1>
   <SignupForm />
 </template>
 
-<script>  
+<script>
 import SignupForm from "./components/SignupForm.vue";
 export default {
   name: "App",
   components: { SignupForm },
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

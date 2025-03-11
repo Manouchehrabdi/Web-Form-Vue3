@@ -1,34 +1,31 @@
 <template>
-  <form>
-    <label>Email: </label>
+  <form class="border">
+    <label class="text-gray-400 tracking-tighter text-2xl">Email: </label>
     <input type="email" required v-model="email" />
-    <label>Password: </label>
+    <label class="text-gray-400 tracking-tighter text-2xl">Password: </label>
     <input type="password" required v-model="password" />
-    <label>Role: </label>
+    <label class="text-gray-400">Role: </label>
     <select v-model="role">
       <option value="developr">Web Developer</option>
       <option value="designer">Web Designer</option>
     </select>
-    <label>Skills:   Alt+, </label>
-    <input type="text" v-model="tempSkill" @keyup="addskill">
+    <label>Skills: Alt+, </label>
+    <input type="text" v-model="tempSkill" @keyup="addskill" />
     <div v-for="skill in skills" :key="skill" class="pill">
       {{ skill }}
     </div>
-
-
-
 
     <div class="terms">
       <input type="checkbox" v-model="terms" required />
       <label>Accept Terms and Condition</label>
     </div>
-  
   </form>
-  <p>Email:{{ email }}</p>
-  <p>Password:{{ password }}</p>
-  <p>Role:{{ role }}</p>
-  <p>Terms:{{ terms }}</p>
-
+  <div class="text-center text-2xl text-red-500 font-mono">
+    <p>Email:{{ email }}</p>
+    <p>Password:{{ password }}</p>
+    <p>Role:{{ role }}</p>
+    <p>Terms:{{ terms }}</p>
+  </div>
 </template>
 
 <script>
@@ -38,22 +35,21 @@ export default {
       email: "Alisan",
       password: "Abdi",
       role: "designer",
-      terms: true, 
-      tempSkill: '',
-      skills:[]
-  
+      terms: true,
+      tempSkill: "",
+      skills: [],
     };
   },
-  methods:{
-    addskill(e){
-        if(e.key===',' && this.tempSkill){
-          if(! this.skills.includes(this.tempSkill)){
-            this.skills.push(this.tempSkill)
-          }
-        this.tempSkill=''
-       }
-    }
-  }
+  methods: {
+    addskill(e) {
+      if (e.key === "," && this.tempSkill) {
+        if (!this.skills.includes(this.tempSkill)) {
+          this.skills.push(this.tempSkill);
+        }
+        this.tempSkill = "";
+      }
+    },
+  },
 };
 </script>
 
@@ -67,15 +63,15 @@ form {
   border-radius: 10px;
 }
 
-label {
+/* label {
   color: #aaa;
   display: inline-block;
-  margin: 25px 0 15px;
+  margin:  25px 0 15px;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
-}
+} */
 
 select,
 input {
@@ -94,7 +90,7 @@ input[type="checkbox"] {
   position: relative;
   top: 2px;
 }
-.pill{
+.pill {
   display: inline-block;
   margin: 20px 10px 0 0;
   padding: 6px 12px;
